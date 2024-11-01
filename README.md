@@ -2,7 +2,6 @@
 
 To install this project on your local machine, clone this repository and run:
 
-```bash
 npm install
 
 To run this on your local machine, use:
