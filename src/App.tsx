@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import DateRangePicker from "./components/dateRangeCalender/DateRangePicker";
 
-function App() {
+const App: React.FC = () => {
+  const [range, setRange] = useState<string[]>([]);
+  const [weekends, setWeekends] = useState<string[]>([]);
+
+  const handleDateRangeChange = ([dateRange, weekendDates]: [
+    string[],
+    string[]
+  ]) => {
+    setRange(dateRange);
+    setWeekends(weekendDates);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="marginTop-32">
+      <DateRangePicker onChange={handleDateRangeChange} />
+      {range.length > 0 && (
+        <div style={{ marginTop: "20px", textAlign: "center" }}>
+          <h3>Selected Range:</h3>
+          <p>{range.join(", ")}</p>
+        </div>
+      )}
+
+      {weekends.length > 0 && (
+        <div style={{ marginTop: "20px", textAlign: "center" }}>
+          <h3>Weekend Dates:</h3>
+          <p>{weekends.join(", ")}</p>
+        </div>
+      )}
     </div>
   );
-}
+};
 
 export default App;

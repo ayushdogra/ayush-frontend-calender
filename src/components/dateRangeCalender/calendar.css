@@ -1,0 +1,226 @@
+.date-range-picker {
+  position: relative;
+  text-align: center;
+  margin: auto;
+  width: fit-content;
+}
+
+.calendar-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  align-items: center;
+}
+
+.input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.date-input {
+  min-width: 150px;
+  padding: 10px;
+  padding-right: 30px; 
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  transition: border-color 0.3s ease;
+  border-color: #007bff;
+  position: relative;
+}
+
+.clear-button {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ddd;
+  border: none;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #555;
+  cursor: pointer;
+  opacity: 0; 
+  transition: opacity 0.2s;
+}
+
+.clear-button:hover {
+  background: #bbb;
+  color: #333;
+}
+
+.date-input:not(:placeholder-shown) + .clear-button {
+  opacity: 1; 
+}
+
+.btn {
+  border: none;
+  background: transparent;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.secondary-btn {
+  color: #0056b3;
+}
+
+.apply-button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.styled-button:hover,
+.apply-button:hover {
+  background-color: #0056b3;
+}
+
+.calendar-container {
+  position: absolute;
+  background-color: white;
+  padding: 16px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.calendars {
+  display: flex;
+}
+
+.calendars-divider {
+  width: 1px;
+  background: #efefef;
+  margin: 0 16px;
+}
+
+.calendar {
+  width: 300px;
+}
+
+.days-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  text-align: center;
+}
+
+.day-header {
+  font-size: 14px;
+  font-weight: bold;
+  color: #555;
+}
+
+.date-button {
+  padding: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.date-button.selected {
+  background-color: #007bff;
+  color: white;
+}
+
+.date-button.in-range {
+  background-color: #e0f0ff;
+}
+
+.date-button:disabled {
+  color: #ccc;
+  background-color: #f5f5f5;
+  cursor: not-allowed;
+}
+
+.month-year-select {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.month-dropdown,
+.year-dropdown {
+  cursor: pointer;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: inline-block;
+  background-color: #fff;
+  transition: border-color 0.3s ease;
+}
+
+.month-dropdown:hover,
+.year-dropdown:hover {
+  border-color: #007bff;
+}
+
+.dropdown-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #ddd;
+  width: 100px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-option {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.dropdown-option:hover,
+.dropdown-option.selected {
+  background-color: #e0e0e0;
+}
+
+.dropdown {
+  background-color: #ffffff;
+  color: #333333;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  appearance: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.dropdown::after {
+  content: "▼";
+  font-size: 12px;
+  color: #666;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.dropdown:hover,
+.dropdown:focus {
+  background-color: #f3f3f3;
+  border-color: #bbb;
+}
+
+.dropdown option {
+  background-color: #ffffff;
+  color: #333333;
+  padding: 8px 10px;
+}
